@@ -1,0 +1,99 @@
+body {
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #fc466b, #3f5efb);
+  font-family: Arial, sans-serif;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  width: 300px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card {
+  position: absolute;
+  width: 305px; /* Increased width */
+  height: 350px; /* Increased height */
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  text-align: center;
+  padding: 15px;
+  box-sizing: border-box;
+  transform-origin: center;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+  z-index: 0;
+}
+
+.rectangle {
+  width: 100%;
+  height: 50%; /* Increased height for the rectangle */
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.circle {
+  width: 40px; /* Increased circle size */
+  height: 40px;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.line {
+  width: 210px; /* Adjusted line width */
+  height: 15px; /* Increased line height */
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 4px;
+  margin-bottom: 5px;
+}
+.card .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.line.small {
+  width: 35%; /* Adjusted smaller line width */
+}
+
+/* Active card */
+.card.active {
+  transform: translateY(0) scale(1.2); /* Slightly enlarges the focused card */
+  opacity: 1;
+  z-index: 3;
+}
+
+/* Cards above the active card */
+.card.above {
+  transform: translateY(-120px) scale(0.9); /* Partially overlaps the active card */
+  opacity: 0.7;
+  z-index: 2;
+}
+
+/* Cards below the active card */
+.card.below {
+  transform: translateY(120px) scale(0.9); /* Partially overlaps the active card */
+  opacity: 0.7;
+  z-index: 2;
+}
+
+
+
